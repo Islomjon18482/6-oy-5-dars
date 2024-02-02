@@ -1,0 +1,31 @@
+.list{
+    padding: 10px;
+    border: 3px solid gray;
+    width: 700px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+body{
+    font-family: sans-serif;
+}
+svg{
+    width: 20px;
+    height: 20px;
+}
+svg path{
+    fill: gray;
+}
+.actions{
+    display: flex;
+    gap: 10px;
+}
+svg:hover{
+    cursor: pointer;
+}
+.text{
+    align-items: center;
+    color: gray;
+    display: flex;
+    gap: 20px;
+}
