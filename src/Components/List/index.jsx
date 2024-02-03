@@ -2,8 +2,13 @@ import React from 'react'
 import styles from "./index.module.css"
 
 export default function List(props) {
-  function heandleClick(e){
-    console.log(e);
+  function heandleClick(){
+    let data = JSON.parse(localStorage.getItem("info")) ? JSON.parse(localStorage.getItem("info")) : []
+    data = data.filter((el) =>{
+      return el.id != props.id
+    })
+    localStorage.setItem("info", JSON.stringify(data))
+    props.valibe(false)
   }
   return (
     <div className={styles.list}>

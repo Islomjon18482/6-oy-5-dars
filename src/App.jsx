@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 
 function App() {
   const [inpValue, setInpValue] = useState("")
+  const [isValibe, setIsValibe] = useState(true)
 
 
   function getInpValue(e){
@@ -44,16 +45,11 @@ function App() {
     }
   }
 
-  function Delete(id) {
-    let newData = data.filter(todo => todo.id !== id);
-    localStorage.setItem("info", JSON.stringify(newData));
-  }
-
 
   function create() {
     let data = JSON.parse(localStorage.getItem("info")) || [];
     return data.length > 0 && data.map((el) => (
-      <List key={el.id} id={el.id} text={el.text} onClick={Delete}></List>
+      <List key={el.id} id={el.id} text={el.text} valibe={setIsValibe}></List>
     ));
   }
 
@@ -62,7 +58,9 @@ function App() {
     <div className="todo">
       <Header></Header>
       <Input value={inpValue} onChange={getInpValue} onClick={hendleClick}></Input>
-      <div>{create()}</div>
+      {
+        isValibe && <div>{create()}</div>
+      }
     </div>
     </>
   )
