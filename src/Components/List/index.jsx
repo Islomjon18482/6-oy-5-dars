@@ -8,7 +8,7 @@ export default function List(props) {
       return el.id != props.id
     })
     localStorage.setItem("info", JSON.stringify(data))
-    props.valibe(2)
+    props.valibe(3)
   }
   function edit(){
     let data1 = JSON.parse(localStorage.getItem("info")) ? JSON.parse(localStorage.getItem("info")) : []
