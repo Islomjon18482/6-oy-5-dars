@@ -49,7 +49,7 @@ function App() {
   function create() {
     let data = JSON.parse(localStorage.getItem("info")) || [];
     return data.length > 0 && data.map((el) => (
-      <List key={el.id} id={el.id} text={el.text} valibe={setIsValibe}></List>
+      <List key={el.id} id={el.id} text={el.text} valibe={setIsValibe} edit={setInpValue}></List>
     ));
   }
 
